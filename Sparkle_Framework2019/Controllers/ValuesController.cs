@@ -61,7 +61,7 @@ namespace Sparkle_Framework2019.Controllers
         [HttpGet("/api/values/name")]
         public IActionResult GetData()
         {
-            return Success(dal.TestMethod());
+            return Success(dal.GetList());
         }
     }
 }

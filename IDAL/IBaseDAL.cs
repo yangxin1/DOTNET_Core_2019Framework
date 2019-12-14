@@ -14,5 +14,7 @@ namespace IDAL
         /// </summary>
         /// <returns></returns>
         string TestMethod();
+
+        List<string> GetList();
     }
 }

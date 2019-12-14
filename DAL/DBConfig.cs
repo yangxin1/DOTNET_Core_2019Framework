@@ -33,6 +33,7 @@ namespace DAL
         /// <returns></returns>
         public static string GetConn()
         {
+            string sqlcon = Decrypt(builder["Connection"]);
             return Decrypt(builder["Connection"]);
         }
 
