@@ -25,8 +25,6 @@ namespace Sparkle_Framework2019.Controllers
             dal = DAL;
             _des = Deshelper;
         }
-        static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -61,6 +59,7 @@ namespace Sparkle_Framework2019.Controllers
         [HttpGet("/api/values/name")]
         public IActionResult GetData()
         {
+            Logger.Info("数据库获取数据");
             return Success(dal.GetList());
         }
     }

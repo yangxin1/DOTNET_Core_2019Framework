@@ -4,15 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 
 namespace Sparkle_Framework2019.Controllers.Base
 {
     /// <summary>
     /// 基础APIController
     /// </summary>
-    [ApiController]
+    //[ApiController]
     public class BaseAPIController : ControllerBase
     {
+        /// <summary>
+        /// 日志
+        /// </summary>
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         #region 通用方法
         /// <summary>
         /// 返回成功
@@ -34,6 +40,7 @@ namespace Sparkle_Framework2019.Controllers.Base
         {
             return new JsonResult(new { code = StateCode.Fail, msg = Msg });
         }
+        //获取当前用户名方法
         #endregion
     }
     /// <summary>
