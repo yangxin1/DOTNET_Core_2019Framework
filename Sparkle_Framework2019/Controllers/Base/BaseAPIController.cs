@@ -15,6 +15,11 @@ namespace Sparkle_Framework2019.Controllers.Base
     public class BaseAPIController : ControllerBase
     {
         /// <summary>
+        /// 用户名
+        /// </summary>
+        public string CurrentUserName = "";
+
+        /// <summary>
         /// 日志
         /// </summary>
         protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();

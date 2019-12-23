@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using DTO.Model.DTOCommon;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -74,6 +75,11 @@ namespace Sparkle_Framework2019
             });
             #endregion
 
+            #region 实体映射
+            //实体映射
+            ColumnMapper.SetMapper();
+            #endregion
+
             #region 依赖注入
             var IOCbuilder = new ContainerBuilder();//建立容器
             List<Assembly> programlist = new List<Assembly> {Assembly.Load("Common"), Assembly.Load("DAL") };//批量反射程序集
@@ -86,6 +92,7 @@ namespace Sparkle_Framework2019
 
             return new AutofacServiceProvider(ApplicationContainner);   //IOC接管
             #endregion
+
         }
 
         /// <summary>
