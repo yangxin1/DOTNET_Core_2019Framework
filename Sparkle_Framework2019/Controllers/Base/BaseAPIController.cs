@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +12,21 @@ namespace Sparkle_Framework2019.Controllers.Base
     /// <summary>
     /// 基础APIController
     /// </summary>
-    //[ApiController]
+    [ApiController]
     public class BaseAPIController : ControllerBase
     {
         /// <summary>
         /// 用户名
         /// </summary>
-        public string CurrentUserName = "";
+        protected string CurrentUserName
+        {
+            get
+            {
+                Claim claim = User.Claims.FirstOrDefault(x => x.Type == "name"); // 保存在Claim中的用户名
+                if (claim == null) return "";
+                return claim.Value;
+            }
+        }
 
         /// <summary>
         /// 日志

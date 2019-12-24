@@ -11,6 +11,5 @@ namespace DAL.TestStudent
     /// </summary>
     public class TestStudentDAL:BaseDAL<TestStudentDTO>,ITestStudent
     {
-
     }
 }
