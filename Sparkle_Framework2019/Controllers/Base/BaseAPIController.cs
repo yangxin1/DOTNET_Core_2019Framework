@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
@@ -13,6 +14,7 @@ namespace Sparkle_Framework2019.Controllers.Base
     /// 基础APIController
     /// </summary>
     [ApiController]
+    [EnableCors("Cors")]
     public class BaseAPIController : ControllerBase
     {
         /// <summary>

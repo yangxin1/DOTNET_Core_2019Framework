@@ -13,4 +13,8 @@
     <ProjectReference Include="..\DTO\DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IRedis\" />
+  </ItemGroup>
+
 </Project>

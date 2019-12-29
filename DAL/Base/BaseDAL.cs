@@ -21,33 +21,33 @@ namespace DAL
         /// <summary>
         /// 日志
         /// </summary>
-        static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// 连接字符串
         /// </summary>
-        private readonly MySqlConnection _conn = new MySqlConnection(DBConfig.GetConn());
+        protected readonly MySqlConnection _conn = new MySqlConnection(DBConfig.GetConn());
 
         /// <summary>
         /// 表类型
         /// </summary>
-        private Type Modeltype { get { return typeof(T); } }
+        protected Type Modeltype { get { return typeof(T); } }
 
         /// <summary>
         /// 表名
         /// </summary>
-        private string Tablename { get { return GetTableName(); } }
+        protected string Tablename { get { return GetTableName(); } }
 
         /// <summary>
         /// 字段
         /// </summary>
-        private string Tablefields { get { return Getfields(); } }
+        protected string Tablefields { get { return Getfields(); } }
 
         /// <summary>
         /// 获取表名
         /// </summary>
         /// <returns></returns>
-        private  string GetTableName()
+        protected string GetTableName()
         {
             string tbname = "";
             Type t = typeof(T);
@@ -59,7 +59,7 @@ namespace DAL
         /// 获取字段组合
         /// </summary>
         /// <returns></returns>
-        private string Getfields()
+        protected string Getfields()
         {
             string fields = " ";
             Type t = typeof(T);
@@ -173,7 +173,7 @@ namespace DAL
         /// <returns></returns>
         public virtual async Task<List<T>> GetListAsync(int index = 1, int limit = 10)
         {
-            #region 拼装SQL
+            #region 拼装SQL/计算页码
             StringBuilder sqlsb = new StringBuilder();
             sqlsb.Append("select " + Tablefields + " from " + Tablename);
 

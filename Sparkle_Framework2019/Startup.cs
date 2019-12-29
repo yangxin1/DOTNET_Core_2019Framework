@@ -11,6 +11,7 @@ using DTO.Model.DTOCommon;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -50,7 +51,8 @@ namespace Sparkle_Framework2019
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+            //获取IP
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
             #region swagger和JWT
             //添加swagger
             services.AddSwaggerGen(c =>
