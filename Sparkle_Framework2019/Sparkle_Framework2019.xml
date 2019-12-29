@@ -9,6 +9,16 @@
             基础APIController
             </summary>
         </member>
+        <member name="P:Sparkle_Framework2019.Controllers.Base.BaseAPIController.CurrentUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:Sparkle_Framework2019.Controllers.Base.BaseAPIController.Logger">
+            <summary>
+            日志
+            </summary>
+        </member>
         <member name="M:Sparkle_Framework2019.Controllers.Base.BaseAPIController.Success(System.Object,System.String)">
             <summary>
             返回成功
@@ -29,27 +39,167 @@
             返回消息枚举
             </summary>
         </member>
-        <member name="F:Sparkle_Framework2019.Controllers.ValuesController._des">
+        <member name="T:Sparkle_Framework2019.Controllers.Base.Token">
             <summary>
-            加密linshi
+            JWTToken加密类
             </summary>
         </member>
-        <member name="M:Sparkle_Framework2019.Controllers.ValuesController.GetDES">
+        <member name="P:Sparkle_Framework2019.Controllers.Base.Token.SecurityKey">
             <summary>
-            获取加密字符
+            密钥
+            </summary>
+        </member>
+        <member name="P:Sparkle_Framework2019.Controllers.Base.Token.ExpiresTime">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.Base.Token.Getsecuritykey(System.String)">
+            <summary>
+            获取配置
+            </summary>
+            <param name="node">配置节点名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.Base.Token.CreateTokenByHandler(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            加密方法
+            </summary>
+            <param name="payLoad">加密信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.Base.Token.Validate(System.String,System.String@,System.Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean})">
+            <summary>
+            验证
+            </summary>
+            <param name="encodeJwt"></param>
+            <param name="msg"></param>
+            <param name="validatePayLoad"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sparkle_Framework2019.Controllers.Login.LoginController">
+            <summary>
+            登陆控制器
+            </summary>
+        </member>
+        <member name="F:Sparkle_Framework2019.Controllers.Login.LoginController.ipservice">
+            <summary>
+            IP地址服务
+            </summary>
+        </member>
+        <member name="F:Sparkle_Framework2019.Controllers.Login.LoginController.deshelper">
+            <summary>
+            加密解密
+            </summary>
+        </member>
+        <member name="F:Sparkle_Framework2019.Controllers.Login.LoginController.service">
+            <summary>
+            数据访问
+            </summary>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.Login.LoginController.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Common.IDESHelper,IDAL.IUSer.IUserDAL)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.Login.LoginController.Login(System.String,System.String)">
+            <summary>
+            用户登录
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Sparkle_Framework2019.Controllers.ValuesController.GetEndes(System.String)">
+        <member name="M:Sparkle_Framework2019.Controllers.Login.LoginController.CheckLogin(System.String)">
             <summary>
-            获取解密字符
+            检测登录(linshi)
             </summary>
+            <param name="jwt"></param>
             <returns></returns>
         </member>
-        <member name="M:Sparkle_Framework2019.Controllers.ValuesController.GetData">
+        <member name="T:Sparkle_Framework2019.Controllers.RedisController.RedisTestController">
             <summary>
-            获取姓名数据
+            Redis测试控制器（测试）
             </summary>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.RedisController.RedisTestController.InsertRedis(System.String,System.String)">
+            <summary>
+            添加string
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.RedisController.RedisTestController.GetRedis(System.String)">
+            <summary>
+            添加string
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController">
+            <summary>
+            学生信息相关接口（测试）
+            </summary>
+        </member>
+        <member name="F:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.service">
+            <summary>
+            服务
+            </summary>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.#ctor(IDAL.ITestStudent.ITestStudent)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="Service"></param>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.GetStudentById(System.Int32)">
+            <summary>
+            获取学生ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.Getstuasync(System.Int32)">
+            <summary>
+            获取学生ID 异步
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.GetStudentList(System.Int32,System.Int32)">
+            <summary>
+            获取学生列表
+            </summary>
+            <param name="index">当前页</param>
+            <param name="limit">每页数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.GetStudentListAsync(System.Int32,System.Int32)">
+            <summary>
+            获取学生列表异步
+            </summary>
+            <param name="index">当前页</param>
+            <param name="limit">每页数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.InsertStuddent(DTO.Model.Student.TestStudentDTO)">
+            <summary>
+            添加学生
+            </summary>
+            <param name="stu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.UpdateStudent(DTO.Model.Student.TestStudentDTO)">
+            <summary>
+            编辑学生信息
+            </summary>
+            <param name="stu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sparkle_Framework2019.Controllers.TestStudentController.TestStudentController.DeleteStudent(System.Int32)">
+            <summary>
+            删除学生
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:Sparkle_Framework2019.Startup">
