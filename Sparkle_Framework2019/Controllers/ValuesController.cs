@@ -15,9 +15,9 @@ namespace Sparkle_Framework2019.Controllers
     [ApiController]
     public class ValuesController : BaseAPIController
     {
-        /// <summary>
-        /// 加密linshi
-        /// </summary>
+        ///// <summary>
+        ///// 加密linshi
+        ///// </summary>
         //private readonly IDESHelper _des;
         //private readonly IBaseDAL dal;
         //public ValuesController(IDESHelper Deshelper,IBaseDAL DAL)
